@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Load the trained model and encoders once
 model = joblib.load('model/degree_class_predictive_model.joblib')
 one_hot_encoder = joblib.load('model/one_hot_encoder.joblib')
-label_encoders = joblib.load('model/label_encoders.joblib')
+
 
 # Define preprocessing function
 def preprocess_input(data):
