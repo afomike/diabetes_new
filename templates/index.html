@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Degree Class Predictor</title>
+    <script src="/static/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body{
+            background: url("{{ url_for('static', filename='image/background.jpg') }}");
+ 
+        }
+        .image {
+        background: url("../static/image/LOGO.jpg") no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px; 
+        margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <h1>Degree Class Predictor</h1>
+        <div class="image"></div>
+        <form action="/predict" method="post" onsubmit="handleSubmit(event)">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+        
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="0" max="120"><br><br>
+        
+                <label for="hypertension">Hypertension:</label>
+                <select id="hypertension" name="hypertension">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select><br><br>
+        
+                <label for="heart_disease">Heart Disease:</label>
+                <select id="heart_disease" name="heart_disease">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select><br><br>
+        
+                <label for="smoking_history">Smoking History:</label>
+                <select id="smoking_history" name="smoking_history">
+                    <option value="never">Never</option>
+                    <option value="former">Former</option>
+                    <option value="current">Current</option>
+                </select><br><br>
+                <label for="bmi">BMI:</label>
+                <input type="number" id="bmi" name="bmi" step="0.1"><br><br>
+                <label for="HbA1c_level">HbA1c Level:</label>
+                <input type="number" id="HbA1c_level" name="HbA1c_level" step="0.1"><br><br>
+        
+                <label for="blood_glucose_level">Blood Glucose Level:</label>
+                <input type="number" id="blood_glucose_level" name="blood_glucose_level" step="0.1"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </form>
+        <!-- <h2>fffffffffffffffffffffff</h2> -->
+        {% if prediction %} 
+             
+            <h2>{{ prediction }}</h2>
+        {% endif %}
+        <!-- "<div id="result"></div> -->
+    
+    </div>
+    <!-- <button class="scroll-up">Scroll Up</button>
+    <button class="scroll-down">Scroll Down</button> -->
+</body>
+</html>
