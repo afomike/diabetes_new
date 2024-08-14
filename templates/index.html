@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Degree Class Predictor</title>
+    <title>Diabetes Predictor</title>
     <script src="/static/script.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <style>
         body{
-            background: url("{{ url_for('static', filename='image/background.jpeg') }}");
+            background: url("{{ url_for('static', filename='image/background.jpeg') }}") ;
  
         }
         .image {
         background: url("../static/image/LOGO.jpeg") no-repeat;
         background-size: cover;
         border-radius: 50%;
-        width: 200px;
-        height: 200px; 
+        width: 100px;
+        height: 100px; 
         margin: auto;
         }
     </style>
 </head>
 <body>
     <div class="cont">
-        <h1>Degree Class Predictor</h1>
+        <h1>Diabetes Predictor</h1>
         <div class="image"></div>
         <form action="/predict" method="post" onsubmit="handleSubmit(event)">
                 <label for="gender">Gender:</label>
@@ -31,7 +31,6 @@
                     <option value="female">Female</option>
                     <option value="other">Other</option>
                 </select><br><br>
-        
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" min="0" max="120"><br><br>
         
